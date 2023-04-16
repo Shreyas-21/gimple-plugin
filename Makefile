@@ -17,7 +17,13 @@ build/plugin.o : plugin.cc
 clean:
 	rm -f build/plugin.so build/plugin.o build/test
 
-test: test.c build/plugin.so
-	$(CC) -O2 -fplugin=./build/plugin.so test.c -o build/test
+first: testing/first.c build/plugin.so
+	$(CC) -O2 -fplugin=./build/plugin.so testing/first.c -o build/first
 
-.PHONY: all clean test
+second: testing/second.c build/plugin.so
+	$(CC) -O2 -fplugin=./build/plugin.so testing/second.c -o build/second
+
+third: testing/third.c build/plugin.so
+	$(CC) -O2 -fplugin=./build/plugin.so testing/third.c -o build/third
+
+.PHONY: all clean first second third
