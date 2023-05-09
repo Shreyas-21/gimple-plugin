@@ -23,11 +23,11 @@
 int plugin_is_GPL_compatible;
 
 static struct plugin_info my_gcc_plugin_info = {
-    "1.0", "This plugin emits warn_dead_code for C++"};
+    "1.0", "This plugin suggests using const function arguments for C"};
 
 const pass_data warn_add_const_data = {
     GIMPLE_PASS,
-    "warn_unused_result_cxx", /* name */
+    "warn_const_argument_cxx", /* name */
     OPTGROUP_NONE,            /* optinfo_flags */
     TV_NONE,                  /* tv_id */
     PROP_gimple_any,          /* properties_required */

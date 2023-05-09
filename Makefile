@@ -6,7 +6,7 @@ CXXFLAGS += -Wno-literal-suffix
 PLUGINDIR=$(shell $(CXX) -print-file-name=plugin)
 CXXFLAGS += -I$(PLUGINDIR)/include
 
-all: build/plugin.so test
+all: build/plugin.so
 
 build/plugin.so: build/plugin.o
 	$(CXX) $(LDFLAGS) -g -shared -o $@ $^
